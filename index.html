@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaiden's Discord Bot Commissions</title>
   <style>
+    :root {
+      --bg: #1e1e2f;
+      --text: #f5f5f5;
+      --accent: #ff80c0;
+      --card: #2e2e3e;
+    }
+
+    [data-theme="light"] {
+      --bg: #f4f4f8;
+      --text: #1e1e2f;
+      --accent: #d92e7f;
+      --card: #ffffff;
+    }
+
     body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #1e1e2f;
-      font-family: 'Segoe UI', sans-serif;
-      color: #f5f5f5;
+      transition: all 0.3s ease;
     }
 
     header {
-      background-color: #ff80c0;
+      background-color: var(--accent);
       padding: 1rem;
       text-align: center;
     }
@@ -24,23 +39,40 @@
       font-size: 2rem;
     }
 
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      color: var(--text);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 1.5rem;
-      background-color: #2e2e3e;
+      background-color: var(--card);
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
-      color: #80dfff;
+      color: var(--accent);
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
     }
 
     ul {
-      list-style: square;
       padding-left: 1.5rem;
     }
 
@@ -50,88 +82,107 @@
       margin-top: 1rem;
     }
 
-    table th, table td {
+    th, td {
       border: 1px solid #444;
       padding: 0.75rem;
+      text-align: left;
     }
 
-    table th {
-      background-color: #3c3c5c;
-    }
-
-    .contact {
-      margin-top: 2rem;
-      font-size: 1.1rem;
+    th {
+      background: var(--accent);
+      color: white;
     }
 
     a {
-      color: #f5aaff;
-      text-decoration: none;
+      color: var(--accent);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .contact, .form-section {
+      margin-top: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
     <h1>Jaiden's Discord Bot Commissions</h1>
   </header>
-
   <div class="container">
-    <h2>🎯 Features I Offer</h2>
+    <h2>What I Offer</h2>
     <ul>
-      <li>Twitch auto-announcement with smart cooldown & force mode</li>
-      <li>Status rotation system (12h delay with dynamic messages)</li>
-      <li>Welcome image generator with profile image masking</li>
-      <li>AWS Polly text-to-speech with voice selection</li>
-      <li>Anti-bot system with auto-kick logic</li>
-      <li>Voice channel loop and music/audio control</li>
-      <li>Modmail ticket system with roles and permissions</li>
-      <li>Slash commands, dropdown menus, and fun extras (like dice games)</li>
-      <li>Custom file uploader, embed control, and role checks</li>
+      <li>Twitch auto-announcements</li>
+      <li>Voice bots with AWS Polly TTS</li>
+      <li>Status rotators, welcome cards, modmail</li>
+      <li>Games, dropdown UIs, custom uploads</li>
     </ul>
 
-    <h2>💰 Pricing</h2>
+    <h2>Pricing</h2>
     <table>
-      <tr>
-        <th>Package</th>
-        <th>Details</th>
-        <th>Estimated Price</th>
-      </tr>
-      <tr>
-        <td>Basic Bot</td>
-        <td>Slash commands, small utils, reactions</td>
-        <td>$20–$50</td>
-      </tr>
-      <tr>
-        <td>Standard Bot</td>
-        <td>Status rotator, embeds, welcome images, file uploads</td>
-        <td>$60–$120</td>
-      </tr>
-      <tr>
-        <td>Advanced Bot</td>
-        <td>Voice, Twitch API, modmail, AWS Polly TTS, full bot polish</td>
-        <td>$150–$300+</td>
-      </tr>
+      <tr><th>Package</th><th>Details</th><th>Estimated Price</th></tr>
+      <tr><td>Basic Bot</td><td>Slash commands, utils</td><td>$20–$50</td></tr>
+      <tr><td>Standard Bot</td><td>Status, embeds, images</td><td>$60–$120</td></tr>
+      <tr><td>Advanced Bot</td><td>Voice, Twitch, modmail</td><td>$150–$300+</td></tr>
     </table>
 
-    <h2>📝 Terms</h2>
+    <h2>Terms</h2>
     <ul>
-      <li>Payment via PayPal (50% upfront)</li>
-      <li>Includes bug support for 7 days after delivery</li>
-      <li>Custom hosting setup or persistent dashboard = extra</li>
-      <li>No reselling or distribution of code without permission</li>
+      <li>50% upfront (PayPal)</li>
+      <li>7-day bug support</li>
+      <li>No reselling</li>
     </ul>
 
+    <div class="form-section">
+      <h2>Commission Request</h2>
+      <form action="https://formspree.io/f/xwkgegjd" method="POST">
+        <input type="text" name="name" placeholder="Your Discord Name" required>
+        <input type="email" name="email" placeholder="Your Email (for delivery)" required>
+        <textarea name="details" rows="5" placeholder="Describe your bot idea..." required></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+
     <div class="contact">
-      <h2>📬 Contact</h2>
+      <h2>Contact</h2>
       <p>Discord: <strong>Jaiden#0001</strong></p>
       <p>Email: <a href="mailto:contact@monarahema.software">contact@monarahema.software</a></p>
-      <p>GitHub: <a href="https://github.com/MonaraHema">github.com/MonaraHema</a></p>
-      <p>Demo Server: <a href="https://discord.gg/YOURSERVERLINK">Join My Demo Server</a></p>
+      <p>GitHub: <a href="https://github.com/MonaraHema">MonaraHema</a></p>
     </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+
+    (function () {
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
 </body>
 </html>
