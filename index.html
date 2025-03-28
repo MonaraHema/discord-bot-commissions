@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-  <meta charset=\"UTF-8\" />
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
-  <title>Jaiden's Discord Bot Commissions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monara's Discord Bot Commissions</title>
   <style>
     :root {
       --bg: #1e1e2f;
       --text: #f5f5f5;
-      --accent: #ff80c0;
+      --accent: #9370DB;
       --card: #2e2e3e;
     }
 
-    [data-theme=\"light\"] {
+    [data-theme="light"] {
       --bg: #f4f4f8;
       --text: #1e1e2f;
       --accent: #d92e7f;
@@ -126,20 +126,17 @@
   </style>
 </head>
 <body>
-  <button class=\"theme-toggle\" onclick=\"toggleTheme()\">Toggle Theme</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
-    <h1>Jaiden's Discord Bot Commissions</h1>
+    <h1>Monara's Discord Bot Commissions</h1>
   </header>
-  <div class=\"container\">
-    <h2>Discord Bot Skillset</h2>
+  <div class="container">
+    <h2>What I Offer</h2>
     <ul>
       <li>Twitch auto-announcements</li>
       <li>Voice bots with AWS Polly TTS</li>
       <li>Status rotators, welcome cards, modmail</li>
       <li>Games, dropdown UIs, custom uploads</li>
-      <li>Role management and moderation</li>
-      <li>Interactive embeds and menus</li>
-      <li>Persistent data with database integration</li>
     </ul>
 
     <h2>Pricing</h2>
@@ -157,34 +154,34 @@
       <li>No reselling</li>
     </ul>
 
-    <div class=\"form-section\">
+    <div class="form-section">
       <h2>Commission Request</h2>
-      <form action=\"https://formspree.io/f/xwkgegjd\" method=\"POST\">
-        <input type=\"text\" name=\"name\" placeholder=\"Your Discord Name\" required>
-        <input type=\"email\" name=\"email\" placeholder=\"Your Email (for delivery)\" required>
-        <textarea name=\"details\" rows=\"5\" placeholder=\"Describe your bot idea...\" required></textarea>
-        <button type=\"submit\">Send Request</button>
+      <form action="https://formspree.io/f/mldjwdqw" method="POST">
+        <input type="text" name="name" placeholder="Your Discord Name" required>
+        <input type="email" name="email" placeholder="Your Email (for delivery)" required>
+        <textarea name="details" rows="5" placeholder="Describe your bot idea..." required></textarea>
+        <button type="submit">Send Request</button>
       </form>
     </div>
 
-    <div class=\"contact\">
+    <div class="contact">
       <h2>Contact</h2>
-      <p>Discord: <strong>Jaiden#0001</strong></p>
-      <p>Email: <a href=\"mailto:contact@monarahema.software\">contact@monarahema.software</a></p>
-      <p>GitHub: <a href=\"https://github.com/MonaraHema\">MonaraHema</a></p>
+      <p>Discord: <strong>MonaraHema</strong></p>
+      <p>Email: <a href="mailto:contact@monarahema.software">contact@monarahema.software</a></p>
+      <p>GitHub: <a href="https://github.com/MonaraHema">MonaraHema</a></p>
     </div>
   </div>
 
   <script>
     function toggleTheme() {
-      const theme = document.documentElement.getAttribute(\"data-theme\") === \"light\" ? \"dark\" : \"light\";
-      document.documentElement.setAttribute(\"data-theme\", theme);
-      localStorage.setItem(\"theme\", theme);
+      const theme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
     }
 
     (function () {
-      const savedTheme = localStorage.getItem(\"theme\") || \"dark\";
-      document.documentElement.setAttribute(\"data-theme\", savedTheme);
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
     })();
   </script>
 </body>
