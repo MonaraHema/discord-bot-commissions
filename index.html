@@ -118,6 +118,23 @@
       border: 1px solid #ccc;
     }
 
+    /* Invert button colors on hover for visibility */
+    .btn:hover, .btn:focus {
+      filter: invert(1) hue-rotate(180deg) brightness(1.1);
+      color: #1e1e2f !important;
+      outline: 2px solid var(--accent);
+    }
+
+    /* Universal selection style for readability */
+    ::selection {
+      background: #b39ddb;
+      color: #1e1e2f;
+    }
+    .btn::selection, .btn *::selection {
+      background: #fff176;
+      color: #1e1e2f;
+    }
+
     @media (max-width: 600px) {
       .container {
         margin: 1rem;
@@ -191,6 +208,11 @@
           <a href="https://github.com/MonaraHema" target="_blank" style="text-decoration: none;">
             <button role="button" class="btn" style="background-color: #9370DB; width: 100%;">
               <i class="bi bi-github"></i> MonaraHema
+            </button>
+          </a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="text-decoration: none;">
+            <button role="button" class="btn" style="background-color: #d92e7f; width: 100%; margin-top: 0.5rem;">
+              <i class="bi bi-images"></i> See My Work
             </button>
           </a>
         </div>
